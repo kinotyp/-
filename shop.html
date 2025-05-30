@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Магазин — Выбери свою коробку</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>🛍️ Магазин Сюрпризов</h1>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="shop.html">Магазин</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="shop">
+    <h2>Выберите свою коробку</h2>
+    <div class="box-list">
+      <div class="box-item">
+        <img src="https://i.imgur.com/YWbZ5wJ.png" alt="Мини Коробка">
+        <h3>📦 Мини Коробка</h3>
+        <p>Маленький, но приятный сюрприз!</p>
+        <button onclick="buyBox('Мини')">Купить за 499₽</button>
+      </div>
+      <div class="box-item">
+        <img src="https://i.imgur.com/Zz6V1hK.png" alt="Супер Коробка">
+        <h3>🎁 Супер Коробка</h3>
+        <p>Средняя коробка — шанс на крутые гаджеты!</p>
+        <button onclick="buyBox('Супер')">Купить за 999₽</button>
+      </div>
+      <div class="box-item">
+        <img src="https://i.imgur.com/k2vA4Ju.png" alt="Мега Коробка">
+        <h3>💎 Мега Коробка</h3>
+        <p>Эксклюзивные вещи! Только для смелых!</p>
+        <button onclick="buyBox('Мега')">Купить за 1999₽</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Тайная Коробка. Все права защищены.</p>
+  </footer>
+
+  <script>
+    function buyBox(type) {
+      alert("Вы выбрали " + type + " коробку! Спасибо за заказ 🎉");
+    }
+  </script>
+</body>
+</html>

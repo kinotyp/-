@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #1a0033, #000);
+  color: white;
+  text-align: center;
+}
+.main-header {
+  background-color: #32004d;
+  padding: 2em 1em;
+  border-bottom: 4px solid #6600cc;
+}
+.main-header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+.tagline {
+  font-size: 1.2em;
+  color: #ccccff;
+}
+.nav a {
+  color: white;
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav a:hover {
+  color: #ff66ff;
+}
+.main-image {
+  max-width: 300px;
+  display: block;
+  margin: 1em auto;
+}
+.choose-button {
+  background: #ff00cc;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1em;
+}
+.choose-button:hover {
+  background: #cc00aa;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+.step {
+  background: #3a0066;
+  padding: 1em;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 0 10px #6600cc;
+}
+.testimonials {
+  background-color: #180022;
+  padding: 2em;
+}
+footer {
+  background: #1a0033;
+  padding: 1em;
+  font-size: 0.9em;
+}
+.shop {
+  padding: 2rem;
+  text-align: center;
+}
+
+.box-list {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.box-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 250px;
+}
+
+.box-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.box-item h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.box-item button {
+  background: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.box-item button:hover {
+  background: #e91e63;
+}
