@@ -14,40 +14,91 @@
       <a href="about.html">О нас</a>
       <a href="contact.html">Контакты</a>
     </nav>
+    <div class="cart-icon">
+      🛒 <span id="cart-total">0₽</span>
+    </div>
   </header>
 
   <main class="shop">
-    <h2>Выберите свою коробку</h2>
-    <div class="box-list">
+    <section class="search-section">
+      <input type="text" id="searchBox" placeholder="🔍 Найти коробку..." oninput="searchBoxes()">
+    </section>
+
+    <section class="box-list">
+      <!-- Мини Коробка -->
       <div class="box-item">
-        <img src="https://i.imgur.com/YWbZ5wJ.png" alt="Мини Коробка">
-        <h3>📦 Мини Коробка</h3>
-        <p>Маленький, но приятный сюрприз!</p>
-        <button onclick="buyBox('Мини')">Купить за 499₽</button>
+  <div class="box-image">
+    <img src="jouwen-wang-UChknR2z5EM-unsplash.jpg" alt="Мини Коробка">
+    <h3>📦 Мини Коробка</h3>
+    <p>Маленькая коробочка с шансом получить:</p>
+    <ul>
+      <li>Игрушка (70%)</li>
+      <li>Аксессуары (20%)</li>
+      <li>Гаджет (10%)</li>
+    </ul>
+    <button onclick="addToCart('Мини Коробка', 499)">Купить за 499₽</button>
+  </div>
+</div>
+        </div>
       </div>
+
+      <!-- Супер Коробка -->
       <div class="box-item">
-        <img src="https://i.imgur.com/Zz6V1hK.png" alt="Супер Коробка">
-        <h3>🎁 Супер Коробка</h3>
-        <p>Средняя коробка — шанс на крутые гаджеты!</p>
-        <button onclick="buyBox('Супер')">Купить за 999₽</button>
+        <div class="box-image">
+          <img src="box-super.png" alt="Супер Коробка">
+        </div>
+        <div class="box-info">
+          <h3>🎁 Супер Коробка</h3>
+          <p>Средняя коробка с шансом получить:</p>
+          <ul>
+            <li>Игрушка (50%)</li>
+            <li>Аксессуары (30%)</li>
+            <li>Гаджет (20%)</li>
+          </ul>
+          <button onclick="addToCart('Супер Коробка', 999)">Купить за 999₽</button>
+        </div>
       </div>
+
+      <!-- Мега Коробка -->
+<div class="box-item">
+  <div class="box-image">
+    <img src="kelli-mcclintock-GopRYASfsOc-unsplash.jpg" alt="Мега Коробка">
+  </div>
+  <div class="box-info">
+    <h3>💎 Мега Коробка</h3>
+    <p>Большая коробка с шансом получить:</p>
+    <ul>
+      <li>Гаджет (40%)</li>
+      <li>Аксессуары (30%)</li>
+      <li>Эксклюзивные предметы (30%)</li>
+    </ul>
+    <button onclick="addToCart('Мега Коробка', 1999)">Купить за 1999₽</button>
+  </div>
+</div>
+
+      <!-- Премиум Коробка -->
       <div class="box-item">
-        <img src="https://i.imgur.com/k2vA4Ju.png" alt="Мега Коробка">
-        <h3>💎 Мега Коробка</h3>
-        <p>Эксклюзивные вещи! Только для смелых!</p>
-        <button onclick="buyBox('Мега')">Купить за 1999₽</button>
+        <div class="box-image">
+            <img src="deepak-gupta-O5JGeKRGP0w-unsplash.jpg" alt="Премиум Коробка">
+        </div>
+        <div class="box-info">
+          <h3>✨ Премиум Коробка</h3>
+          <p>Самая элитная коробка с шансом получить:</p>
+          <ul>
+            <li>Гаджет (50%)</li>
+            <li>Эксклюзивные товары (30%)</li>
+            <li>Сюрприз VIP (20%)</li>
+          </ul>
+          <button onclick="addToCart('Премиум Коробка', 2999)">Купить за 2999₽</button>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Тайная Коробка. Все права защищены.</p>
+    <p>© 2025 Тайная Коробка. Все права защищены. | <a href="mailto:support@mysterybox.ru">Написать нам</a></p>
   </footer>
 
-  <script>
-    function buyBox(type) {
-      alert("Вы выбрали " + type + " коробку! Спасибо за заказ 🎉");
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

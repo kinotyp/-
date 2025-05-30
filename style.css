@@ -85,6 +85,7 @@ footer {
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 250px;
+  color: #333; 
 }
 
 .box-item img {
@@ -95,6 +96,12 @@ footer {
 
 .box-item h3 {
   margin: 1rem 0 0.5rem;
+  color: #6600cc; /* Можно задать особый цвет для заголовков */
+}
+
+.box-item p, 
+.box-item ul {
+  color: #555; /* Темно-серый для текста и списков */
 }
 
 .box-item button {
@@ -109,4 +116,73 @@ footer {
 
 .box-item button:hover {
   background: #e91e63;
+}
+.box-item ul {
+  text-align: left; /* Выравнивание списка по левому краю */
+  padding-left: 1.2rem; /* Отступ для списка */
+}
+/* Поисковая строка */
+.search-section {
+  margin-bottom: 2rem;
+}
+
+#searchBox {
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  border: none;
+  width: 60%;
+  max-width: 500px;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(102, 0, 204, 0.3);
+}
+
+/* Иконка корзины */
+.cart-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cart-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+/* Уменьшаем футер */
+footer {
+  background: #1a0033;
+  padding: 0.5em; /* Было 1em */
+  font-size: 0.8em; /* Было 0.9em */
+  margin-top: 2rem; /* Добавляем отступ сверху */
+}
+
+/* Делаем картинки внутри коробок адаптивными */
+.box-image img {
+  width: 100%;
+  height: 150px; /* Фиксированная высота */
+  object-fit: cover; /* Чтобы изображение не искажалось */
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+/* Делаем контейнеры более компактными */
+.box-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 250px;
+  margin-bottom: 1.5rem; /* Отступ между коробками */
+}
+
+/* Уменьшаем отступы внутри коробки */
+.box-info {
+  padding: 0.5rem;
+}
+
+/* Делаем кнопку чуть меньше */
+.box-item button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
 }

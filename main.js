@@ -13,20 +13,40 @@ function renderCart() {
 
   cart.forEach(item => {
     const li = document.createElement('li');
-    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    li.textContent = `${item.name} — ${item.price}₽`;
     cartItems.appendChild(li);
     sum += item.price;
   });
 
-  total.textContent = `Итого: $${sum.toFixed(2)}`;
+  total.textContent = `Итого: ${sum}₽`;
 }
 
 function checkout() {
   if (cart.length === 0) {
-    alert('Корзина пуста!');
+    alert('Ваша корзина пуста!');
     return;
   }
-  alert('Спасибо за покупку! Сюрприз скоро у вас!');
+  alert('Спасибо за покупку! Сюрприз скоро у вас! 🎉');
   cart = [];
   renderCart();
+}
+let total = 0;
+
+function addToCart(name, price) {
+  total += price;
+  document.getElementById('cart-total').innerText = total + '₽';
+  alert(`Вы добавили ${name} в корзину!`);
+}
+
+function searchBoxes() {
+  const searchValue = document.getElementById('searchBox').value.toLowerCase();
+  const boxes = document.querySelectorAll('.box-item');
+  boxes.forEach(box => {
+    const title = box.querySelector('.box-info h3').innerText.toLowerCase();
+    if (title.includes(searchValue)) {
+      box.style.display = 'flex';
+    } else {
+      box.style.display = 'none';
+    }
+  });
 }
