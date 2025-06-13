@@ -1,48 +1,58 @@
 let cart = [];
+let total = 0;
 
 function addToCart(name, price) {
   cart.push({ name, price });
+  total += price;
+  document.getElementById('cart-total').innerText = total + '₴';
   renderCart();
+  alert(`Додано "${name}" до кошика!`);
 }
 
 function renderCart() {
   const cartItems = document.getElementById('cart-items');
-  const total = document.getElementById('total');
+  const totalDisplay = document.getElementById('total');
   cartItems.innerHTML = '';
   let sum = 0;
 
   cart.forEach(item => {
     const li = document.createElement('li');
-    li.textContent = `${item.name} — ${item.price}₽`;
+    li.textContent = `${item.name} — ${item.price}₴`;
     cartItems.appendChild(li);
     sum += item.price;
   });
 
-  total.textContent = `Итого: ${sum}₽`;
+  totalDisplay.textContent = `Разом: ${sum}₴`;
 }
 
 function checkout() {
   if (cart.length === 0) {
-    alert('Ваша корзина пуста!');
+    alert('Ваш кошик порожній!');
     return;
   }
-  alert('Спасибо за покупку! Сюрприз скоро у вас! 🎉');
+  alert('Дякуємо за покупку! Ваш сюрприз вже в дорозі 🎉');
   cart = [];
+  total = 0;
+  document.getElementById('cart-total').innerText = '0₴';
   renderCart();
+  toggleCart(false);
 }
-let total = 0;
 
-function addToCart(name, price) {
-  total += price;
-  document.getElementById('cart-total').innerText = total + '₽';
-  alert(`Вы добавили ${name} в корзину!`);
+
+function toggleCart(show) {
+  const cartSection = document.getElementById('cart-section');
+  if (show === false) {
+    cartSection.style.display = 'none';
+  } else {
+    cartSection.style.display = (cartSection.style.display === 'none') ? 'block' : 'none';
+  }
 }
 
 function searchBoxes() {
   const searchValue = document.getElementById('searchBox').value.toLowerCase();
   const boxes = document.querySelectorAll('.box-item');
   boxes.forEach(box => {
-    const title = box.querySelector('.box-info h3').innerText.toLowerCase();
+    const title = box.querySelector('h3').innerText.toLowerCase();
     if (title.includes(searchValue)) {
       box.style.display = 'flex';
     } else {
