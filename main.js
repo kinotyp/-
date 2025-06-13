@@ -60,3 +60,22 @@ function searchBoxes() {
     }
   });
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const section = document.querySelector('.about-section');
+  
+  
+  for (let i = 0; i < 20; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('particle');
+    
+    
+    dot.style.left = Math.random() * 100 + '%';
+    dot.style.top = Math.random() * 100 + '%';
+    
+    
+    dot.style.width = (Math.random() * 4 + 2) + 'px';
+    dot.style.height = dot.style.width;
+    
+    section.appendChild(dot);
+  }
+});
