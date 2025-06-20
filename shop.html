@@ -4,6 +4,35 @@
   <meta charset="UTF-8">
   <title>Магазин — Обери свою коробку</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px #000;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header class="main-header">
@@ -25,49 +54,50 @@
     </section>
 
     <section class="box-list">
-      <!-- Картки коробок -->
-      <!-- Генеруємо 15+ коробок -->
       <script>
-  const boxes = [
-    { name: 'Міні Коробка', img: 'box1.jpg', price: 199, desc: 'Невеличкий подарунок для приємного сюрпризу!' },
-    { name: 'Супер Коробка', img: 'jouwen-wang-UChknR2z5EM-unsplash.jpg', price: 499, desc: 'Крутий набір середнього розміру з цікавими речами.' },
-    { name: 'Мега Коробка', img: 'kelli-mcclintock-GopRYASfsOc-unsplash.jpg', price: 999, desc: 'Тут вже справжній WOW-ефект гарантований!' },
-    { name: 'Преміум Коробка', img: 'box4.jpg', price: 1499, desc: 'Розкішні речі всередині – для найвибагливіших.' },
-    { name: 'Геймерська Коробка', img: 'box5.jpg', price: 799, desc: 'Гаджети, наліпки, ігрові фішки – усе для геймера.' },
-    { name: 'Коробка з аксесуарами', img: 'box6.jpg', price: 299, desc: 'Прикраси, ремінці, браслети та стильні штуки.' },
-    { name: 'Коробка-сюрприз для дітей', img: 'box7.jpg', price: 399, desc: 'Іграшки, наклейки, солодощі – діти в захваті!' },
-    { name: 'Електронна коробка', img: 'box8.jpg', price: 899, desc: 'Навушники, кабелі, зарядки – усе, що треба.' },
-    { name: 'Коробка для неї', img: 'box9.jpg', price: 549, desc: 'Косметика, аромати, міні-подарунки для дівчат.' },
-    { name: 'Коробка для нього', img: 'box10.jpg', price: 549, desc: 'Гаджети, аксесуари й чоловічі цікавинки.' },
-    { name: 'Коробка з прикрасами', img: 'box11.jpg', price: 649, desc: 'Кулони, сережки, браслети – справжній блиск.' },
-    { name: 'VIP Коробка', img: 'deepak-gupta-O5JGeKRGP0w-unsplash.jpg', price: 1999, desc: 'Ексклюзивні речі для тих, хто хоче максимум.' },
-    { name: 'Коробка для подорожей', img: 'box13.jpg', price: 699, desc: 'Дорожні набори, міні-косметика, аксесуари.' },
-    { name: 'Коробка з канцтоварами', img: 'box14.jpg', price: 249, desc: 'Блокноти, ручки, стікери – радість для письма.' },
-    { name: 'Коробка-прикол', img: 'box15.jpg', price: 199, desc: 'Смішні штуки, які піднімуть настрій 100%.' },
-  ];
+        const boxes = [
+          { name: 'Міні Коробка', img: 'box1.jpg', price: 199, desc: 'Невеличкий подарунок для приємного сюрпризу!' },
+          { name: 'Супер Коробка', img: 'jouwen-wang-UChknR2z5EM-unsplash.jpg', price: 499, desc: 'Крутий набір середнього розміру з цікавими речами.' },
+          { name: 'Мега Коробка', img: 'kelli-mcclintock-GopRYASfsOc-unsplash.jpg', price: 999, desc: 'Тут вже справжній WOW-ефект гарантований!' },
+          { name: 'Преміум Коробка', img: 'box4.jpg', price: 1499, desc: 'Розкішні речі всередині – для найвибагливіших.' },
+          { name: 'Геймерська Коробка', img: 'box5.jpg', price: 799, desc: 'Гаджети, наліпки, ігрові фішки – усе для геймера.' },
+          { name: 'Коробка з аксесуарами', img: 'box6.jpg', price: 299, desc: 'Прикраси, ремінці, браслети та стильні штуки.' },
+          { name: 'Коробка-сюрприз для дітей', img: 'box7.jpg', price: 399, desc: 'Іграшки, наклейки, солодощі – діти в захваті!' },
+          { name: 'Електронна коробка', img: 'box8.jpg', price: 899, desc: 'Навушники, кабелі, зарядки – усе, що треба.' },
+          { name: 'Коробка для неї', img: 'box9.jpg', price: 549, desc: 'Косметика, аромати, міні-подарунки для дівчат.' },
+          { name: 'Коробка для нього', img: 'box10.jpg', price: 549, desc: 'Гаджети, аксесуари й чоловічі цікавинки.' },
+          { name: 'Коробка з прикрасами', img: 'box11.jpg', price: 649, desc: 'Кулони, сережки, браслети – справжній блиск.' },
+          { name: 'VIP Коробка', img: 'deepak-gupta-O5JGeKRGP0w-unsplash.jpg', price: 1999, desc: 'Ексклюзивні речі для тих, хто хоче максимум.' },
+          { name: 'Коробка для подорожей', img: 'box13.jpg', price: 699, desc: 'Дорожні набори, міні-косметика, аксесуари.' },
+          { name: 'Коробка з канцтоварами', img: 'box14.jpg', price: 249, desc: 'Блокноти, ручки, стікери – радість для письма.' },
+          { name: 'Коробка-прикол', img: 'box15.jpg', price: 199, desc: 'Смішні штуки, які піднімуть настрій 100%.' },
+        ];
 
-  document.write(boxes.map(box => `
-    <div class="box-item">
-      <div class="box-image">
-        <img src="${box.img}" alt="${box.name}">
-      </div>
-      <div class="box-info">
-        <h3>${box.name}</h3>
-        <p>${box.desc}</p>
-        <button onclick="addToCart('${box.name}', ${box.price})">Придбати за ${box.price}₴</button>
-      </div>
-    </div>
-  `).join(''));
-</script>
+        document.write(boxes.map(box => `
+          <div class="box-item">
+            <div class="box-image">
+              <img src="${box.img}" alt="${box.name}">
+            </div>
+            <div class="box-info">
+              <h3>${box.name}</h3>
+              <p>${box.desc}</p>
+              <button onclick="addToCart('${box.name}', ${box.price})">Придбати за ${box.price}₴</button>
+            </div>
+          </div>
+        `).join(''));
+      </script>
     </section>
   </main>
 
-  <section id="cart-section" style="display:none;">
+  <div id="cart-modal" class="cart-modal">
+  <div class="cart-modal-content">
+    <span onclick="toggleCart()" class="close-btn">✖</span>
     <h2>🛒 Ваш кошик</h2>
     <ul id="cart-items"></ul>
     <p id="total">Разом: 0₴</p>
     <button onclick="checkout()">Підтвердити покупку</button>
-  </section>
+  </div>
+</div>
 
   <footer>
     <p>© 2025 Магазин Сюрпризів | <a href="mailto:support@mysterybox.ua">Зв'язатися з нами</a></p>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎁 Таємна Коробка — Контакти з привітом</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== ОСНОВНЫЕ СТИЛИ ===== */
+    body {
+      background: linear-gradient(to bottom, #1a0033, #000);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* ===== ШАПКА ===== */
+    .main-header {
+      background-color: #32004d;
+      padding: 2em 0;
+      border-bottom: 4px solid #6600cc;
+      text-align: center;
+    }
+    
+    .main-header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    
+    .tagline {
+      font-size: 1.2em;
+      color: #ccccff;
+      margin: 10px 0 20px;
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+    
+    .nav a:hover {
+      color: #ff66ff;
+    }
+    
+    .nav a.active {
+      color: #ff00cc;
+      border-bottom: 2px solid #ff00cc;
+    }
+    
+    /* ===== ГЛАВНЫЙ КОНТЕНТ ===== */
+    .contact-hero {
+      padding: 80px 0;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(102, 0, 204, 0.2), transparent 70%);
+    }
+    
+    .contact-hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ff66ff;
+    }
+    
+    .contact-hero p {
+      font-size: 1.2rem;
+      color: #ccccff;
+    }
+    
+    /* ===== БЛОК КОНТАКТОВ ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 60px 0;
+    }
+    
+    .contact-card {
+      background: rgba(58, 0, 102, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .contact-icon {
+      font-size: 2.5rem;
+      color: #ff66ff;
+      margin-bottom: 20px;
+    }
+    
+    /* ===== СПОНСОРСКИЙ БЛОК ===== */
+    .sponsor-block {
+      background: rgba(255, 102, 255, 0.1);
+      border: 2px dashed #ff66ff;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    
+    .sponsor-title {
+      font-size: 1.8rem;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+    
+    .sponsor-image {
+      max-width: 300px;
+      border-radius: 15px;
+      border: 3px solid #ffcc00;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    }
+    
+    .sponsor-note {
+      font-style: italic;
+      color: #ccccff;
+    }
+    
+    /* ===== ФОРМА ОБРАТНОЙ СВЯЗИ ===== */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background: rgba(58, 0, 102, 0.5);
+      border-radius: 15px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 102, 255, 0.3);
+      border-radius: 8px;
+      color: white;
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+    }
+    
+    /* ===== КАРТА ===== */
+    .map-container {
+      margin: 60px 0;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(102, 0, 204, 0.5);
+    }
+    
+    /* ===== ФУТЕР ===== */
+    .main-footer {
+      background: #1a0033;
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    
+    .footer-links a {
+      color: #ccccff;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      color: #ff66ff;
+    }
+    
+    /* ===== АНИМАЦИИ ===== */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+    
+    .sponsor-image:hover {
+      animation: shake 0.5s ease infinite;
+    }
+  </style>
+</head>
+<body>
+ </head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1>🎁 Таємна Коробка</h1>
+      <p class="tagline">Кожна коробка — це загадка. Готовий дізнатись, що всередині?</p>
+      <nav class="nav">
+        <a href="index.html">Головна</a>
+        <a href="shop.html">Магазин</a>
+        <a href="about.html">Про нас</a>
+        <a href="contact.html" class="active">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="container">
+        <h2>Зв'яжіться з нами</h2>
+        <p>Ми завжди поруч, якщо ваша коробка зникла</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Наша адреса</h3>
+          <p>м. Київ, вул. Хрещатик, 1<br>(Самі знайдете)</p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>Телефон</h3>
+          <p><a href="tel:+380441234567">+38 (044) 123-45-67</a><br>(іноді відповідаємо)</p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p><a href="mailto:info@mysterybox.ua">info@mysterybox.ua</a><br>пишіть, але не дуже часто</p>
+        </div>
+      </div>
+
+      <!-- СПОНСОРСЬКИЙ БЛОК -->
+      <div class="sponsor-block">
+        <h3 class="sponsor-title">Офіційний постачальник наших таємниць</h3>
+        <img src="2RlxyYfVIB13QjH6TwbLHtoQzQdauWTK9qlDt4UH.jpeg" alt="Таємничий спонсор" class="sponsor-image">
+        <p>Дзідзьо — наш головний коробкопакувальник і хранитель сюрпризів</p>
+        <p class="sponsor-note">* Ми не кладемо морозиво в коробки, але можемо покласти... саму коробку. У коробку.</p>
+      </div>
+
+      <!-- ФОРМА -->
+      <form class="contact-form">
+        <h3>Напишіть нам (можливо, отримаєте коробку-відповідь)</h3>
+        <div class="form-group">
+          <input type="text" placeholder="Ваше ім'я" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Ваш Email" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Ваше повідомлення..." required></textarea>
+        </div>
+        <button type="submit" style="
+          background: linear-gradient(90deg, #ff00cc, #cc00ff);
+          color: white;
+          border: none;
+          padding: 15px 30px;
+          border-radius: 30px;
+          cursor: pointer;
+          font-weight: bold;
+        ">Надіслати</button>
+      </form>
+
+      <!-- КАРТА -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.731058423943!2d30.52349031573111!3d50.44777997947495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce5155555555%3A0x9a8d4f8c3a4d5f6e!2z0LLRg9C70LjRhtGPINCl0YDQuNC80LDRhtC60LDRjywgMSwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1620000000000!5m2!1suk!2sua" 
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>© 2025 Таємна Коробка. Всі права захищені.</p>
+      <div class="footer-links">
+        <a href="policy.html">Політика конфіденційності</a>
+        <a href="terms.html">Умови використання</a>
+        <a href="sponsor.html">Хочете стати спонсором як Дзідзьо?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Анимация при загрузке
+    document.addEventListener('DOMContentLoaded', function() {
+      // Случайный факт о Дзідзі
+      const dzidzioFacts = [
+        "Дзідзьо одного разу сам виліз із коробки — так і почалась компанія",
+        "Він знає, що в кожній коробці… але не каже",
+        "Його коробка — це коробка всіх коробок",
+        "Колись він загубив коробку… у коробці"
+      ];
+      
+      const randomFact = dzidzioFacts[Math.floor(Math.random() * dzidzioFacts.length)];
+      console.log(`Факт про Дзідзя: ${randomFact}`);
+      
+      // Обработка формы
+      const form = document.querySelector('.contact-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Дякуємо! Ваше повідомлення відправлено у спеціальну коробку — Дзідзьо вже дивиться 👀');
+          form.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

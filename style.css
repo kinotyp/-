@@ -136,7 +136,7 @@ footer {
   box-shadow: 0 0 15px rgba(102, 0, 204, 0.3);
 }
 
-/* Иконка корзины */
+
 .cart-icon {
   position: absolute;
   top: 20px;
@@ -150,43 +150,43 @@ footer {
 .cart-icon:hover {
   background: rgba(255, 255, 255, 0.3);
 }
-/* Уменьшаем футер */
+
 footer {
   background: #1a0033;
-  padding: 0.5em; /* Было 1em */
-  font-size: 0.8em; /* Было 0.9em */
-  margin-top: 2rem; /* Добавляем отступ сверху */
+  padding: 0.5em; 
+  font-size: 0.8em; 
+  margin-top: 2rem; 
 }
 
-/* Делаем картинки внутри коробок адаптивными */
+
 .box-image img {
   width: 100%;
-  height: 150px; /* Фиксированная высота */
-  object-fit: cover; /* Чтобы изображение не искажалось */
+  height: 150px; 
+  object-fit: cover; 
   border-radius: 8px;
   margin-bottom: 0.5rem;
 }
-/* Делаем контейнеры более компактными */
+
 .box-item {
   background: #fff;
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 250px;
-  margin-bottom: 1.5rem; /* Отступ между коробками */
+  margin-bottom: 1.5rem; 
 }
 
-/* Уменьшаем отступы внутри коробки */
+
 .box-info {
   padding: 0.5rem;
 }
 
-/* Делаем кнопку чуть меньше */
+
 .box-item button {
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
 }
-/* Стили для страницы "Про нас" */
+
 .about-section {
   max-width: 800px;
   margin: 40px auto;
@@ -370,4 +370,219 @@ footer {
     padding: 10px 20px;
     font-size: 14px;
   }
+}
+
+/* ==== Кошик Модалка ==== */
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.7);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.cart-modal-content {
+  background: #fff;
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 25px;
+  border-radius: 12px;
+  position: relative;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #999;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+.cart-modal-content h2 {
+  margin-top: 0;
+  color: #542fbd;
+}
+
+.cart-modal-content ul {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 20px;
+}
+
+.cart-modal-content button {
+  background: #542fbd;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-modal-content button:hover {
+  background: #3d21a0;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.cart-modal-content {
+  color: #222; 
+}
+
+#cart-items li {
+  color: #333; 
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+#total {
+  color: #222;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.intro {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.why-us {
+  background: radial-gradient(circle at center, #220033 0%, #000 100%);
+  padding: 3rem 1rem;
+}
+
+.why-us h2 {
+  font-size: 2rem;
+  color: #ff66ff;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature {
+  background: #2a0040;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 0 15px rgba(255, 102, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 102, 255, 0.4);
+}
+
+.feature span {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.feature h3 {
+  margin: 0.5rem 0;
+  color: #ffccff;
+}
+
+.feature p {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.featured-boxes {
+  background: #0d001a;
+  padding: 3rem 1rem;
+}
+
+.featured-boxes h2 {
+  color: #ff66ff;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+/* Анимации только для отзывов */
+.review-card {
+  background: rgba(58, 0, 102, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Кнопка с пульсацией */
+.btn-pulse {
+  animation: pulse 2s infinite;
+  background: #ff00cc;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+.btn-glow {
+  background: linear-gradient(90deg, #ff00cc, #cc00ff);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 204, 0.5);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.8);
 }

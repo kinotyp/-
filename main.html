@@ -1,66 +1,344 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html> 
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎁 Тайная Коробка — Сюрпризы ждут тебя!</title>
-  <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎁 Таємна Коробка — Сюрпризи чекають на тебе!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <header class="main-header">
-    <h1>🎁 Тайная Коробка</h1>
-    <p class="tagline">Каждая коробка — это загадка. Готов узнать, что внутри?</p>
+    <h1>🎁 Таємна Коробка</h1>
+    <p class="tagline">Кожна коробка — це загадка. Готовий дізнатись, що всередині?</p>
     <nav class="nav">
-      <a href="index.html">Главная</a>
+      <a href="index.html">Головна</a>
       <a href="shop.html">Магазин</a>
-      <a href="about.html">О нас</a>
-      <a href="contact.html">Контакты</a>
+      <a href="about.html">Про нас</a>
+      <a href="contact.html">Контакти</a>
     </nav>
   </header>
 
   <main class="landing">
+
     <section class="intro">
-      <img src="https://i.imgur.com/Zz6V1hK.png" alt="Секретная коробка" class="main-image">
-      <h2>Открой свою удачу прямо сейчас!</h2>
-      <p>Случайный сюрприз может стать началом чего-то удивительного. Мы предлагаем коробки с секретом — от гаджетов до эксклюзива!</p>
-      <a href="shop.html" class="choose-button">🎉 Перейти к выбору</a>
+      <h2 class="animated fadeInUp">Відкрий свою удачу прямо зараз!</h2>
+      <p class="animated fadeInUp" style="animation-delay: 0.2s">
+        Випадковий сюрприз може стати початком чогось неймовірного. Ми пропонуємо коробки з таємницею — від ґаджетів до ексклюзиву!
+      </p>
+      <a href="shop.html" class="choose-button cta-button">🎉 Обрати коробку</a>
+    </section>
+
+    <section class="advantages">
+      <h2 class="animated fadeInUp">Чому обирають нас?</h2>
+      <div class="steps">
+        <div class="step animated fadeInUp">
+          <h3><i class="fas fa-gift"></i> Справжні сюрпризи</h3>
+          <p>Жодного ширпотребу — лише корисні та цікаві речі.</p>
+        </div>
+        <div class="step animated fadeInUp" style="animation-delay: 0.2s">
+          <h3><i class="fas fa-shipping-fast"></i> Швидка доставка</h3>
+          <p>Доставляємо в найкоротші терміни по всій Україні.</p>
+        </div>
+        <div class="step animated fadeInUp" style="animation-delay: 0.4s">
+          <h3><i class="fas fa-star"></i> Гарантована цінність</h3>
+          <p>Кожна коробка коштує менше, ніж вміст всередині.</p>
+        </div>
+      </div>
     </section>
 
     <section class="how-it-works">
-      <h2>Как это работает?</h2>
+      <h2 class="animated fadeInUp">Як це працює?</h2>
       <div class="steps">
-        <div class="step">
-          <h3>1️⃣ Выберите коробку</h3>
-          <p>Мини, Супер или Мега — каждая с уникальными сюрпризами.</p>
+        <div class="step animated fadeInUp" style="animation-delay: 0.2s">
+          <h3>1️⃣ Обери коробку</h3>
+          <p>Міні, Супер або Мега — кожна з унікальними сюрпризами.</p>
         </div>
-        <div class="step">
-          <h3>2️⃣ Совершите покупку</h3>
-          <p>Быстрая и безопасная оплата.</p>
+        <div class="step animated fadeInUp" style="animation-delay: 0.4s">
+          <h3>2️⃣ Здійсни покупку</h3>
+          <p>Швидка та безпечна оплата.</p>
         </div>
-        <div class="step">
-          <h3>3️⃣ Получите сюрприз</h3>
-          <p>Откройте коробку и наслаждайтесь неожиданностью!</p>
+        <div class="step animated fadeInUp" style="animation-delay: 0.6s">
+          <h3>3️⃣ Отримай сюрприз</h3>
+          <p>Відкрий коробку та насолоджуйся несподіванкою!</p>
         </div>
       </div>
     </section>
 
     <section class="testimonials">
-      <h2>Отзывы наших покупателей</h2>
-      <blockquote>
-        "Я получил наушники, которые стоили в 5 раз дороже коробки! Очень доволен!" — Алексей
+      <h2 class="animated fadeInUp">Відгуки наших клієнтів</h2>
+      <blockquote class="animated fadeInUp" style="animation-delay: 0.2s">
+        "Я отримав навушники, що коштують у 5 разів дорожче коробки! Дуже задоволений!" — Олексій
       </blockquote>
-      <blockquote>
-        "Купила просто ради интереса — а оказалось, внутри был смарт-часы. Круто!" — Мария
+      <blockquote class="animated fadeInUp" style="animation-delay: 0.4s">
+        "Купила просто з цікавості — а всередині були смарт-годинник. Круто!" — Марія
       </blockquote>
+
+      <div id="reviews-container">
+    <blockquote class="animated fadeInUp" style="animation-delay: 0.2s">
+      "Я отримав навушники, що коштують у 5 разів дорожче коробки! Дуже задоволений!" — Олексій
+    </blockquote>
+    <blockquote class="animated fadeInUp" style="animation-delay: 0.4s">
+      "Купила просто з цікавості — а всередині були смарт-годинник. Круто!" — Марія
+    </blockquote>
+  </div>
+
+  <!-- Кнопка и форма -->
+  <button id="add-review-btn" class="btn-pulse">➕ Додати відгук</button>
+  
+  <form id="review-form" class="hidden">
+    <textarea placeholder="Ваш відгук..." required></textarea>
+    <input type="text" placeholder="Ваше ім'я" required>
+    <button type="submit" class="btn-glow">Надіслати</button>
+  </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Тайная Коробка. Все права защищены.</p>
-    <p><a href="mailto:support@mysterybox.ru">Написать нам</a> | <a href="policy.html">Политика конфиденциальности</a></p>
+    <div>
+      <p>© 2025 Таємна Коробка. Всі права захищені.</p>
+      <p>
+        <a href="mailto:support@mysterybox.ua">Написати нам</a> |
+        <a href="policy.html">Політика конфіденційності</a>
+      </p>
+    </div>
+    <div class="socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('add-review-btn');
+    const form = document.getElementById('review-form');
+    const reviewsContainer = document.getElementById('reviews-container');
+
+    
+    btn.addEventListener('click', () => {
+      form.classList.toggle('hidden');
+    });
+
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const text = this.querySelector('textarea').value.trim();
+      const name = this.querySelector('input').value.trim();
+
+     
+      if (!text || !name) {
+        alert("Будь ласка, заповніть усі поля!");
+        return;
+      }
+
+      
+      const newReview = document.createElement('blockquote');
+      newReview.className = 'animated fadeInUp';
+      newReview.style.animationDelay = '0.2s';
+      newReview.textContent = `"${text}" — ${name}`;
+
+      
+      reviewsContainer.prepend(newReview);
+
+      
+      this.reset();
+      form.classList.add('hidden');
+
+      
+      setTimeout(() => {
+        newReview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 300);
+    });
+  });
+</script>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .review-form {
+      margin-top: 20px;
+    }
+
+    .review-form textarea,
+    .review-form input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    .add-review-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #662d91;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .add-review-btn:hover {
+      background-color: #512b7a;
+    }
+    
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+
+#review-form {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(58, 0, 102, 0.7);
+  border-radius: 10px;
+}
+
+#review-form textarea,
+#review-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 102, 255, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 8px;
+}
+
+#review-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+
+.btn-pulse {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1em;
+  background-color: #ff00cc;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  animation: pulse 2s infinite;
+  transition: background 0.3s;
+}
+
+.btn-pulse:hover {
+  background-color: #cc00aa;
+  animation: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn-glow {
+  background: linear-gradient(90deg, #ff00cc, #cc00ff);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 204, 0.5);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.8);
+  transform: translateY(-2px);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animated {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+/* Форма отзывов */
+#review-form {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(58, 0, 102, 0.7);
+  border-radius: 10px;
+}
+#review-form textarea,
+#review-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 102, 255, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 8px;
+}
+#review-form textarea {
+  min-height: 100px;
+}
+
+/* Кнопки */
+.btn-pulse {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff00cc;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+.btn-pulse:hover {
+  background: #cc00aa;
+  animation: none;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn-glow {
+  background: linear-gradient(90deg, #ff00cc, #cc00ff);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 0, 204, 0.5);
+  transition: all 0.3s;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.8);
+}
+  </style>
+
 </body>
 </html>
