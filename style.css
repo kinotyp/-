@@ -372,8 +372,6 @@ footer {
   }
 }
 
-/* ==== Кошик Модалка ==== */
-
 .cart-modal {
   display: none;
   position: fixed;
@@ -382,64 +380,88 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(20, 20, 20, 0.7);
+  background: rgba(30, 20, 50, 0.8);
   animation: fadeIn 0.3s ease forwards;
+  backdrop-filter: blur(4px);
 }
 
 .cart-modal-content {
   background: #fff;
-  max-width: 500px;
-  margin: 60px auto;
-  padding: 25px;
-  border-radius: 12px;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 30px 24px;
+  border-radius: 16px;
   position: relative;
   animation: slideUp 0.4s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  cursor: pointer;
-  font-size: 22px;
-  color: #999;
-  transition: 0.2s;
-}
-
-.close-btn:hover {
-  color: #000;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  color: #333;
+  font-family: sans-serif;
 }
 
 .cart-modal-content h2 {
   margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
   color: #542fbd;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 26px;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
 }
 
 .cart-modal-content ul {
-  max-height: 200px;
+  max-height: 240px;
   overflow-y: auto;
   padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+}
+
+#cart-items li {
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+#total {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 20px;
+  color: #542fbd;
 }
 
 .cart-modal-content button {
-  background: #542fbd;
+  width: 100%;
+  background: linear-gradient(90deg, #542fbd, #7e5eff);
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 14px;
   font-size: 16px;
-  margin-top: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .cart-modal-content button:hover {
-  background: #3d21a0;
+  background: linear-gradient(90deg, #3d21a0, #6a4de5);
 }
 
-
-
+/* Animations remain unchanged */
 @keyframes fadeIn {
   from { opacity: 0 }
   to { opacity: 1 }
@@ -454,15 +476,6 @@ footer {
     transform: translateY(0);
     opacity: 1;
   }
-}
-.cart-modal-content {
-  color: #222; 
-}
-
-#cart-items li {
-  color: #333; 
-  margin-bottom: 8px;
-  font-size: 16px;
 }
 
 #total {
@@ -585,4 +598,180 @@ footer {
 
 .btn-glow:hover {
   box-shadow: 0 0 20px rgba(255, 0, 204, 0.8);
+}
+/* Корзина — модальное окно */
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 20, 50, 0.85);
+  animation: fadeIn 0.5s ease forwards;
+  backdrop-filter: blur(6px);
+}
+
+.cart-modal.show {
+  display: block;
+}
+
+/* Контент корзины */
+.cart-modal-content {
+  background: #fff;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 30px 24px;
+  border-radius: 16px;
+  position: relative;
+  animation: bounceUp 0.6s ease forwards;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  color: #333;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+/* Заголовок */
+.cart-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #542fbd;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 26px;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Список товаров */
+.cart-modal-content ul {
+  max-height: 260px;
+  overflow-y: auto;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+  scrollbar-width: thin;
+  scrollbar-color: #542fbd #eee;
+}
+
+.cart-modal-content ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-modal-content ul::-webkit-scrollbar-thumb {
+  background-color: #542fbd;
+  border-radius: 3px;
+}
+
+#cart-items li {
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Итого */
+#total {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 20px;
+  color: #542fbd;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Кнопка оформления */
+.cart-modal-content button {
+  width: 100%;
+  background: linear-gradient(90deg, #542fbd, #7e5eff);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 0 15px rgba(126, 94, 255, 0.5);
+}
+
+.cart-modal-content button:hover {
+  background: linear-gradient(90deg, #3d21a0, #6a4de5);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(126, 94, 255, 0.7);
+}
+
+.cart-modal-content button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0) 45%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 55%);
+  transform: rotate(30deg);
+  animation: shine 2.5s infinite;
+  pointer-events: none;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounceUp {
+  0% { transform: translateY(80px); opacity: 0; }
+  60% { transform: translateY(-10px); opacity: 1; }
+  80% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #542fbd;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(20px);
+  z-index: 2000;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -5,27 +5,31 @@ function addToCart(name, price) {
   cart.push({ name, price });
   saveCart();
   updateCartIcon();
-  alert(`Додано "${name}" до кошика!`);
+  showToast(`✅ Додано «${name}» до кошика!`);
 }
 
 function updateCartIcon() {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
-  document.getElementById("cart-total").innerText = `${total}₴`;
+  const cartTotal = document.getElementById("cart-total");
+  if (cartTotal) {
+    cartTotal.innerText = `${total}₴`;
+  }
 }
 
 function toggleCart() {
   const modal = document.getElementById("cart-modal");
-  if (modal.style.display === "none" || modal.style.display === "") {
-    showCart();
-    modal.style.display = "block";
-  } else {
-    modal.style.display = "none";
-  }
+  if (!modal) return;
+  const isOpen = modal.style.display === "block";
+  modal.style.display = isOpen ? "none" : "block";
+  if (!isOpen) showCart();
 }
 
 function showCart() {
   const cartItems = document.getElementById("cart-items");
   const totalEl = document.getElementById("total");
+
+  if (!cartItems || !totalEl) return;
+
   cartItems.innerHTML = "";
 
   if (cart.length === 0) {
@@ -47,14 +51,14 @@ function showCart() {
 
 function checkout() {
   if (cart.length === 0) {
-    alert("Ваш кошик порожній!");
+    showToast("⚠️ Ваш кошик порожній!");
     return;
   }
 
-  purchased = purchased.concat(cart);
+  purchased = [...purchased, ...cart];
   localStorage.setItem("purchased", JSON.stringify(purchased));
 
-  alert("Дякуємо за покупку!");
+  showToast("🎉 Дякуємо за покупку!");
   cart = [];
   saveCart();
   updateCartIcon();
@@ -75,31 +79,22 @@ function loadCart() {
   updateCartIcon();
 }
 
-function searchBoxes() {
-  const searchValue = document.getElementById('searchBox').value.toLowerCase();
-  const boxes = document.querySelectorAll('.box-item');
-  boxes.forEach(box => {
-    const title = box.querySelector('h3').innerText.toLowerCase();
-    box.style.display = title.includes(searchValue) ? 'flex' : 'none';
-  });
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  loadCart();
+document.addEventListener('DOMContentLoaded', loadCart);
 
-  const section = document.querySelector('.about-section');
-  if (section) {
-    for (let i = 0; i < 20; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('particle');
-      dot.style.left = Math.random() * 100 + '%';
-      dot.style.top = Math.random() * 100 + '%';
-      dot.style.width = (Math.random() * 4 + 2) + 'px';
-      dot.style.height = dot.style.width;
-      section.appendChild(dot);
-    }
-  }
-});
+
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('review-form');
   const btn = document.getElementById('add-review-btn');
