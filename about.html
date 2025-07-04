@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас — Магазин Сюрпризів</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>🎁 Магазин Сюрпризів</h1>
+    <nav class="nav">
+      <a href="main.html">Головна</a>
+      <a href="shop.html">Магазин</a>
+      <a href="about.html" class="active">Про нас</a>
+      <a href="contact.html">Контакти</a>
+    </nav>
+  </header>
+
+  <main class="about-section">
+    <h2>Хто ми?</h2>
+    <p>Ми — команда ентузіастів, які вірять, що життя має бути повне сюрпризів! Наш магазин створений для тих, хто хоче додати трохи магії в будні.</p>
+
+    <h2>Що ми пропонуємо?</h2>
+    <p>У нас ви знайдете коробки з несподіваними подарунками для дітей, дорослих, геймерів, мандрівників та багатьох інших. Ми самостійно збираємо коробки, щоб кожна покупка була незабутньою.</p>
+
+    <h2>Чому саме ми?</h2>
+    <ul>
+      <li>Унікальний асортимент — кожен місяць нові тематичні набори</li>
+      <li>Швидка доставка — по всій Україні за 1-3 дні</li>
+      <li>Турбота про клієнта — індивідуальний підхід до кожного</li>
+    </ul>
+
+    <a href="shop.html" class="cta-button">Спробувати сюрпризи</a>
+  </main>
+
+  <footer>
+    <p>© 2025 Магазин Сюрпризів | <a href="mailto:support@mysterybox.ua">Зв'язатися з нами</a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('.about-section');
+    if (!section) return;
+    
+    for (let i = 0; i < 25; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'particle';
+      const random = (min, max) => Math.random() * (max - min) + min;
+      dot.style.left = random(0, 100) + '%';
+      dot.style.top = random(0, 100) + '%';
+      dot.style.width = random(2, 6) + 'px';
+      dot.style.height = dot.style.width;
+      dot.style.animationDelay = random(0, 15) + 's';
+      section.appendChild(dot);
+    }
+  });
+</script>
+</body>
+</html>

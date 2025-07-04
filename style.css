@@ -136,7 +136,7 @@ footer {
   box-shadow: 0 0 15px rgba(102, 0, 204, 0.3);
 }
 
-/* Иконка корзины */
+
 .cart-icon {
   position: absolute;
   top: 20px;
@@ -150,39 +150,628 @@ footer {
 .cart-icon:hover {
   background: rgba(255, 255, 255, 0.3);
 }
-/* Уменьшаем футер */
+
 footer {
   background: #1a0033;
-  padding: 0.5em; /* Было 1em */
-  font-size: 0.8em; /* Было 0.9em */
-  margin-top: 2rem; /* Добавляем отступ сверху */
+  padding: 0.5em; 
+  font-size: 0.8em; 
+  margin-top: 2rem; 
 }
 
-/* Делаем картинки внутри коробок адаптивными */
+
 .box-image img {
   width: 100%;
-  height: 150px; /* Фиксированная высота */
-  object-fit: cover; /* Чтобы изображение не искажалось */
+  height: 150px; 
+  object-fit: cover; 
   border-radius: 8px;
   margin-bottom: 0.5rem;
 }
-/* Делаем контейнеры более компактными */
+
 .box-item {
   background: #fff;
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 250px;
-  margin-bottom: 1.5rem; /* Отступ между коробками */
+  margin-bottom: 1.5rem; 
 }
 
-/* Уменьшаем отступы внутри коробки */
+
 .box-info {
   padding: 0.5rem;
 }
 
-/* Делаем кнопку чуть меньше */
+
 .box-item button {
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(58, 0, 102, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(102, 0, 204, 0.5);
+  border: 1px solid #6600cc;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  backdrop-filter: blur(5px);
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,102,255,0.1) 0%, rgba(102,0,204,0) 70%);
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.about-section h2 {
+  color: #ff66ff;
+  margin-top: 30px;
+  font-size: 28px;
+  text-shadow: 0 0 10px rgba(255,102,255,0.3);
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff66ff, transparent);
+}
+
+.about-section p {
+  color: #ccccff;
+  line-height: 1.7;
+  margin: 20px 0;
+  font-size: 16px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.about-section ul {
+  padding-left: 0;
+  color: #ccccff;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.about-section li {
+  margin-bottom: 15px;
+  list-style-type: none;
+  position: relative;
+  padding-left: 35px;
+  line-height: 1.6;
+  transition: all 0.3s;
+}
+
+.about-section li:hover {
+  transform: translateX(5px);
+  color: white;
+}
+
+.about-section li::before {
+  content: '✦';
+  color: #ff66ff;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; text-shadow: 0 0 5px #ff66ff; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff00cc, #cc00ff);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,102,255,0.4);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,102,255,0.5);
+}
+
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0) 45%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 55%);
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255,102,255,0.7);
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255,102,255,0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  animation: float 15s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -15px); }
+  50% { transform: translate(-5px, 10px); }
+  75% { transform: translate(15px, -5px); }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    margin: 20px;
+    padding: 20px;
+  }
+  .about-section h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 20px 15px;
+    margin: 20px 10px;
+  }
+  .about-section h2 {
+    font-size: 22px;
+  }
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 20, 50, 0.8);
+  animation: fadeIn 0.3s ease forwards;
+  backdrop-filter: blur(4px);
+}
+
+.cart-modal-content {
+  background: #fff;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 30px 24px;
+  border-radius: 16px;
+  position: relative;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  color: #333;
+  font-family: sans-serif;
+}
+
+.cart-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #542fbd;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 26px;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.cart-modal-content ul {
+  max-height: 240px;
+  overflow-y: auto;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+}
+
+#cart-items li {
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+#total {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 20px;
+  color: #542fbd;
+}
+
+.cart-modal-content button {
+  width: 100%;
+  background: linear-gradient(90deg, #542fbd, #7e5eff);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cart-modal-content button:hover {
+  background: linear-gradient(90deg, #3d21a0, #6a4de5);
+}
+
+/* Animations remain unchanged */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#total {
+  color: #222;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.intro {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.why-us {
+  background: radial-gradient(circle at center, #220033 0%, #000 100%);
+  padding: 3rem 1rem;
+}
+
+.why-us h2 {
+  font-size: 2rem;
+  color: #ff66ff;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature {
+  background: #2a0040;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 0 15px rgba(255, 102, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 102, 255, 0.4);
+}
+
+.feature span {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.feature h3 {
+  margin: 0.5rem 0;
+  color: #ffccff;
+}
+
+.feature p {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.featured-boxes {
+  background: #0d001a;
+  padding: 3rem 1rem;
+}
+
+.featured-boxes h2 {
+  color: #ff66ff;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+/* Анимации только для отзывов */
+.review-card {
+  background: rgba(58, 0, 102, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Кнопка с пульсацией */
+.btn-pulse {
+  animation: pulse 2s infinite;
+  background: #ff00cc;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+.btn-glow {
+  background: linear-gradient(90deg, #ff00cc, #cc00ff);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 204, 0.5);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.8);
+}
+/* Корзина — модальное окно */
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 20, 50, 0.85);
+  animation: fadeIn 0.5s ease forwards;
+  backdrop-filter: blur(6px);
+}
+
+.cart-modal.show {
+  display: block;
+}
+
+/* Контент корзины */
+.cart-modal-content {
+  background: #fff;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 30px 24px;
+  border-radius: 16px;
+  position: relative;
+  animation: bounceUp 0.6s ease forwards;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  color: #333;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+/* Заголовок */
+.cart-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #542fbd;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 26px;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Список товаров */
+.cart-modal-content ul {
+  max-height: 260px;
+  overflow-y: auto;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+  scrollbar-width: thin;
+  scrollbar-color: #542fbd #eee;
+}
+
+.cart-modal-content ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-modal-content ul::-webkit-scrollbar-thumb {
+  background-color: #542fbd;
+  border-radius: 3px;
+}
+
+#cart-items li {
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Итого */
+#total {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 20px;
+  color: #542fbd;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Кнопка оформления */
+.cart-modal-content button {
+  width: 100%;
+  background: linear-gradient(90deg, #542fbd, #7e5eff);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 0 15px rgba(126, 94, 255, 0.5);
+}
+
+.cart-modal-content button:hover {
+  background: linear-gradient(90deg, #3d21a0, #6a4de5);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(126, 94, 255, 0.7);
+}
+
+.cart-modal-content button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0) 45%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 55%);
+  transform: rotate(30deg);
+  animation: shine 2.5s infinite;
+  pointer-events: none;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounceUp {
+  0% { transform: translateY(80px); opacity: 0; }
+  60% { transform: translateY(-10px); opacity: 1; }
+  80% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #542fbd;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(20px);
+  z-index: 2000;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
